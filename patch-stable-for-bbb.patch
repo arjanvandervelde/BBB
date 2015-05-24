@@ -1,0 +1,45 @@
+Index: release/arm/BEAGLEBONE.conf
+===================================================================
+--- release/arm/BEAGLEBONE.conf	(revision 283308)
++++ release/arm/BEAGLEBONE.conf	(working copy)
+@@ -7,7 +7,7 @@
+ EMBEDDED_TARGET="arm"
+ EMBEDDED_TARGET_ARCH="armv6"
+ EMBEDDEDPORTS="sysutils/u-boot-beaglebone"
+-KERNEL="BEAGLEBONE"
++KERNEL="BEAGLEBONEB-CUSTOM"
+ WORLD_FLAGS="${WORLD_FLAGS} UBLDR_LOADADDR=0x88000000"
+ IMAGE_SIZE="1G"
+ PART_SCHEME="MBR"
+Index: release/release.sh
+===================================================================
+--- release/release.sh	(revision 283308)
++++ release/release.sh	(working copy)
+@@ -55,7 +55,7 @@
+ # file is sourced, if '-c <release.conf>' is specified.
+ env_setup() {
+ 	# The directory within which the release will be built.
+-	CHROOTDIR="/scratch"
++	CHROOTDIR="/scratch/release"
+ 	RELENGDIR="$(dirname $(realpath ${0}))"
+ 
+ 	# The default version control system command to obtain the sources.
+@@ -69,7 +69,7 @@
+ 
+ 	# The default svn checkout server, and svn branches for src/, doc/,
+ 	# and ports/.
+-	SVNROOT="svn://svn.FreeBSD.org/"
++	SVNROOT="https://svn0.us-east.freebsd.org"
+ 	SRCBRANCH="base/head@rHEAD"
+ 	DOCBRANCH="doc/head@rHEAD"
+ 	PORTBRANCH="ports/head@rHEAD"
+Index: sys/arm/conf
+===================================================================
+--- sys/arm/conf	(revision 283308)
++++ sys/arm/conf	(working copy)
+
+Property changes on: sys/arm/conf
+___________________________________________________________________
+Deleted: svn:ignore
+## -1 +0,0 ##
+-[A-Za-z0-9]*
