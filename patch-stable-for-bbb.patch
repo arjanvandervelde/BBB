@@ -33,13 +33,3 @@ Index: release/release.sh
  	SRCBRANCH="base/head@rHEAD"
  	DOCBRANCH="doc/head@rHEAD"
  	PORTBRANCH="ports/head@rHEAD"
-Index: sys/arm/conf
-===================================================================
---- sys/arm/conf	(revision 283308)
-+++ sys/arm/conf	(working copy)
-
-Property changes on: sys/arm/conf
-___________________________________________________________________
-Deleted: svn:ignore
-## -1 +0,0 ##
--[A-Za-z0-9]*
